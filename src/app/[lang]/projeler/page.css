@@ -1,0 +1,158 @@
+.projeler-page {
+    width: 100%;
+}
+
+.page-padding {
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 80px;
+}
+
+/* Tablar */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    flex: 1;
+    max-width: 250px;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #333333;
+    /* Dark gray for All */
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-btn.filter-completed {
+    background-color: #00aced;
+    /* Light blue */
+}
+
+.filter-btn.filter-ongoing {
+    background-color: #00aced;
+    /* Light blue */
+}
+
+.filter-btn:hover {
+    filter: brightness(1.1);
+}
+
+.filter-btn.active {
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+}
+
+/* Grid Yapısı */
+.projekt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.projekt-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* İş Bitirme Ribbon */
+.is-bitirme-ribbon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #f14c2b;
+    /* Orange/Red */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    z-index: 10;
+}
+
+/* Resim Alanı */
+.projekt-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+.projekt-card:hover .projekt-image-wrapper {
+    transform: scale(1.03);
+}
+
+/* Alt Banner (Title & Button) */
+.projekt-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.projekt-title {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+}
+
+.projekt-show-btn {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.projekt-show-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 1024px) {
+    .projekt-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-btn {
+        max-width: 100%;
+    }
+
+    .projekt-grid {
+        grid-template-columns: 1fr;
+    }
+}

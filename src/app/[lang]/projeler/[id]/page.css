@@ -1,0 +1,177 @@
+.proje-detay-page {
+    width: 100%;
+}
+
+.page-padding {
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 80px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    color: #666666;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .current {
+    color: #666666;
+}
+
+/* Layout */
+.detay-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Sol Kısım (Resim & Galeri) */
+.detay-sol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    /* Hafif gri border */
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.is-bitirme-tooltip {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #e50000;
+    color: white;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Kurdele Üçgen Ucu */
+.is-bitirme-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    border-width: 15px 15px 0 0;
+    border-style: solid;
+    border-color: #990000 transparent transparent transparent;
+}
+
+.is-bitirme-tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    border-width: 15px 15px 15px 0;
+    border-style: solid;
+    border-color: transparent #e50000 transparent transparent;
+}
+
+
+/* Thumbnails */
+.gallery-thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumb-wrapper {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    border: 3px solid #ffffff;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.thumb-wrapper:hover {
+    opacity: 1;
+    border-color: #00aced;
+}
+
+/* Sağ Kısım (İçerik Tablo) */
+.detay-sag {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.proje-isim {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: #666;
+}
+
+.info-label {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.info-value {
+    flex: 1;
+    line-height: 1.6;
+}
+
+/* Back Butonu */
+.btn-back {
+    display: inline-block;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #000000;
+}
+
+@media (max-width: 992px) {
+    .detay-layout {
+        grid-template-columns: 1fr;
+    }
+}

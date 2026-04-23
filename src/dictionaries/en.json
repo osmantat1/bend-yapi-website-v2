@@ -1,0 +1,24 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "Corporate",
+        "services": "Services",
+        "projects": "Projects",
+        "references": "References",
+        "news": "News",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title1": "We Do Not Compromise on",
+        "title2": "Quality and Trust",
+        "desc": "Since 2005, we have been building world-class new living centers. We specialize in water structures, high-rise residential buildings, shopping malls, and public contracting.",
+        "btn1": "Explore Projects",
+        "btn2": "About Us"
+    },
+    "stats": {
+        "exp": "Years Experience",
+        "projects": "Completed Projects",
+        "countries": "Different Countries",
+        "satisfaction": "Customer Satisfaction"
+    }
+}

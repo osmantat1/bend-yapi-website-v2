@@ -1,0 +1,138 @@
+.kurumsal-page {
+    /* Genel css'ten (globals.css) body background kullanılıyor, bu sayfa için ek düzeltmeler */
+    width: 100%;
+}
+
+.page-padding {
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 80px;
+}
+
+.page-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.page-desc {
+    color: var(--color-text-primary);
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-box {
+    padding: 60px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 80px;
+}
+
+.content-title {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.content-subtitle {
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.content-text {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.why-us {
+    margin-bottom: 80px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-normal);
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 160, 23, 0.4);
+}
+
+.why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(212, 160, 23, 0.3));
+}
+
+.why-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: var(--color-text-primary);
+}
+
+.why-card p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cta-section {
+    padding: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .content-box {
+        padding: 40px;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .content-title {
+        font-size: 2rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .cta-actions .btn-secondary {
+        margin-left: 0 !important;
+    }
+}

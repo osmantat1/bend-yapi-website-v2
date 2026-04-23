@@ -1,0 +1,124 @@
+.belgeler-page {
+    width: 100%;
+}
+
+.page-padding {
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 80px;
+}
+
+.page-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.page-desc {
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.belgeler-kapsam {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.seksiyon-baslik {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.belge-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.belge-satir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.belge-satir:hover {
+    transform: translateX(4px);
+    border-color: rgba(212, 160, 23, 0.4);
+}
+
+.belge-sol {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.belge-ikon {
+    font-size: 1.8rem;
+}
+
+.belge-ad {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.belge-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.btn-indir {
+    padding: 8px 20px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.btn-indir:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.belge-not {
+    font-size: 0.8rem;
+    color: rgba(160, 160, 160, 0.5);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .belge-satir {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .btn-indir {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "navbar": {
+        "home": "Ana Sayfa",
+        "about": "Kurumsal",
+        "services": "Hizmetler",
+        "projects": "Projeler",
+        "references": "Referanslar",
+        "news": "Haberler",
+        "contact": "İletişim"
+    },
+    "hero": {
+        "title1": "Kalite ve Güvenden",
+        "title2": "Taviz Vermeyiz",
+        "desc": "2005 yılından beri dünya standartlarında yeni yaşam merkezleri kuruyoruz. Su yapıları, yüksek katlı konutlar, AVM'ler ve kamu taahhütlerinde uzmanız.",
+        "btn1": "Projeleri İncele",
+        "btn2": "Hakkımızda"
+    },
+    "stats": {
+        "exp": "Yıllık Deneyim",
+        "projects": "Tamamlanan Proje",
+        "countries": "Farklı Ülke",
+        "satisfaction": "Müşteri Memnuniyeti"
+    }
+}

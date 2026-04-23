@@ -1,0 +1,206 @@
+.iletisim-page {
+    width: 100%;
+}
+
+.page-padding {
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 80px;
+}
+
+.page-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.page-desc {
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.iletisim-kapsam {
+    margin-bottom: 80px;
+}
+
+.iletisim-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.iletisim-bilgiler {
+    padding: 50px 40px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bilgi-baslik {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+}
+
+.bilgi-satir {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.bilgi-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bilgi-etiket {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.bilgi-deger {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+}
+
+.bilgi-link {
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+}
+
+.bilgi-link:hover {
+    color: var(--color-accent-light);
+}
+
+.whatsapp-cta {
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20BA5A;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.whatsapp-not {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Sosyal */
+.sosyal-blok {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sosyal-kart,
+.merkez-kart {
+    padding: 36px;
+    border-radius: var(--radius-md);
+}
+
+.sosyal-kart h3,
+.merkez-kart h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.merkez-kart p,
+.sosyal-aciklama {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.sosyal-linkler {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.sosyal-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.sosyal-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.sosyal-btn span {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--color-accent);
+}
+
+.sosyal-not {
+    font-size: 0.75rem;
+    color: rgba(160, 160, 160, 0.4);
+    margin-top: 12px;
+    font-style: italic;
+}
+
+@media (max-width: 992px) {
+    .iletisim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .iletisim-bilgiler {
+        padding: 30px 20px;
+    }
+}

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bend-yapi-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Kod değişikliklerini anında yansıt (hot reload)
+      - .:/app
+      # node_modules'ü host'tan IZOLE et (Windows uyumluluğu)
+      - /app/node_modules
+      # .next build çıktısını izole et
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true # Windows'ta hot reload için
+      - CHOKIDAR_USEPOLLING=true # Windows'ta dosya değişikliği izleme
+    restart: unless-stopped
