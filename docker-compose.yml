@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -19,4 +17,6 @@ services:
       - NODE_ENV=development
       - WATCHPACK_POLLING=true # Windows'ta hot reload için
       - CHOKIDAR_USEPOLLING=true # Windows'ta dosya değişikliği izleme
+    env_file:
+      - .env.local
     restart: unless-stopped

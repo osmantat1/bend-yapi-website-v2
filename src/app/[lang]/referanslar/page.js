@@ -1,32 +1,25 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { getDictionary } from "@/utils/dictionary";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
 import "./page.css";
 
-export default function ReferanslarPage() {
-    const [referanslar, setReferanslar] = useState([]);
-    const [loading, setLoading] = useState(true);
+export default async function ReferanslarPage({ params }) {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    const content = dict.referencesPage;
+    let referanslar = [];
 
-    useEffect(() => {
-        async function fetchReferences() {
-            try {
-                const { data, error } = await supabase
-                    .from('references')
-                    .select('*')
-                    .order('created_at', { ascending: true });
+    try {
+        const { data, error } = await supabase
+            .from('references')
+            .select('*')
+            .order('created_at', { ascending: true });
 
-                if (error) throw error;
-                if (data) setReferanslar(data);
-            } catch (err) {
-                console.error("Referanslar yüklenemedi:", err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchReferences();
-    }, []);
+        if (error) throw error;
+        if (data) referanslar = data;
+    } catch (err) {
+        console.error("Referanslar yüklenemedi:", err.message);
+    }
 
     return (
         <main className="referanslar-page page-padding">
@@ -34,11 +27,10 @@ export default function ReferanslarPage() {
             <div className="page-hero">
                 <div className="container">
                     <h1 className="page-title animate-slide-up">
-                        Şirket <span className="glow-text">Referanslarımız</span>
+                        {content.title} <span className="glow-text">{content.titleSpan}</span>
                     </h1>
                     <p className="page-desc animate-slide-up delay-100">
-                        Bend Yapı olarak sektörün önde gelen kurum ve firmalarıyla güçlü
-                        çözüm ortaklıkları kurduk.
+                        {content.desc}
                     </p>
                 </div>
             </div>
@@ -46,10 +38,10 @@ export default function ReferanslarPage() {
             {/* Referans Şirketleri Logoları */}
             <section className="sirket-liste container animate-slide-up delay-200">
                 <div className="sirket-grid">
-                    {loading ? (
-                        <p style={{ textAlign: "center", gridColumn: "1/-1", padding: "40px", color: "#ccc" }}>Yükleniyor...</p>
-                    ) : referanslar.length === 0 ? (
-                        <p style={{ textAlign: "center", gridColumn: "1/-1", padding: "40px", color: "#ccc" }}>Henüz referans eklenmedi.</p>
+                    {referanslar.length === 0 ? (
+                        <p style={{ textAlign: "center", gridColumn: "1/-1", padding: "40px", color: "#ccc" }}>
+                            {content.notFound}
+                        </p>
                     ) : (
                         referanslar.map((ref, i) => (
                             <div key={ref.id || i} className={`sirket-card glass-panel delay-${(i % 5) * 100}`}>
@@ -59,6 +51,7 @@ export default function ReferanslarPage() {
                                         alt={ref.company_name}
                                         fill
                                         style={{ objectFit: 'contain' }}
+                                        sizes="(max-width: 768px) 100vw, 20vw"
                                     />
                                 </div>
                                 <div className="sirket-info">
@@ -70,7 +63,7 @@ export default function ReferanslarPage() {
                 </div>
 
                 <p className="ref-not" style={{ marginTop: '50px' }}>
-                    * Referans logolarımız admin paneli üzerinden tam yetkiyle güncellenebilir olacaktır.
+                    {content.note}
                 </p>
             </section>
         </main>

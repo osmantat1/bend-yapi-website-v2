@@ -1,46 +1,43 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { getDictionary } from "@/utils/dictionary";
+import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import "./page.css";
 
-export default function Home() {
-  const [featuredProjects, setFeaturedProjects] = useState([]);
+export default async function Home({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  let featuredProjects = [];
 
-  useEffect(() => {
-    async function fetchFeatured() {
-      try {
-        const { data } = await supabase
-          .from('projects')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(3);
+  try {
+    const { data } = await supabase
+      .from('projects')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(3);
 
-        if (data && data.length > 0) {
-          setFeaturedProjects(data);
-        }
-      } catch (err) {
-        console.error("Öne çıkan projeler yüklenirken hata:", err);
-      }
+    if (data && data.length > 0) {
+      featuredProjects = data;
     }
-    fetchFeatured();
-  }, []);
+  } catch (err) {
+    console.error("Öne çıkan projeler yüklenirken hata:", err);
+  }
+
   return (
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="container hero-content animate-fade-in">
-          <h1 className="hero-title">Kalite ve Güvenden <span className="glow-text">Taviz Vermeyiz</span></h1>
+          <h1 className="hero-title">
+            {dict.hero.title1} <span className="glow-text">{dict.hero.title2}</span>
+          </h1>
           <p className="hero-subtitle">
-            2005 yılından beri dünya standartlarında yeni yaşam merkezleri kuruyoruz.
-            Su yapıları, yüksek katlı konutlar, AVM'ler ve kamu taahhütlerinde uzmanız.
+            {dict.hero.desc}
           </p>
           <div className="hero-actions delay-200">
-            <Link href="/projeler" className="btn-primary">Projeleri İncele</Link>
-            <Link href="/kurumsal" className="btn-secondary">Hakkımızda</Link>
+            <Link href={`/${lang}/projeler`} className="btn-primary hero-cta-primary">{dict.hero.btn1}</Link>
+            <Link href={`/${lang}/kurumsal`} className="btn-secondary">{dict.hero.btn2}</Link>
           </div>
         </div>
       </section>
@@ -51,19 +48,19 @@ export default function Home() {
           <div className="stats-grid animate-slide-up delay-200">
             <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
               <h2 className="stat-number glow-text">20+</h2>
-              <p className="stat-label">Yıllık Deneyim</p>
+              <p className="stat-label">{dict.stats.exp}</p>
             </div>
             <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
               <h2 className="stat-number glow-text">50+</h2>
-              <p className="stat-label">Tamamlanan Proje</p>
+              <p className="stat-label">{dict.stats.projects}</p>
             </div>
             <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
               <h2 className="stat-number glow-text">5+</h2>
-              <p className="stat-label">Farklı Ülke</p>
+              <p className="stat-label">{dict.stats.countries}</p>
             </div>
             <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
               <h2 className="stat-number glow-text">%100</h2>
-              <p className="stat-label">Müşteri Memnuniyeti</p>
+              <p className="stat-label">{dict.stats.satisfaction}</p>
             </div>
           </div>
         </div>
@@ -73,37 +70,37 @@ export default function Home() {
       <section className="services section">
         <div className="container">
           <div className="section-header text-center animate-slide-up">
-            <h2 className="section-title">Uzmanlık <span>Alanlarımız</span></h2>
-            <p className="section-desc">Deneyimli mühendislik kadromuzla geniş bir yelpazede hizmet sunuyoruz.</p>
+            <h2 className="section-title">{dict.homePage.servicesTitle} <span>{dict.homePage.servicesTitleSpan}</span></h2>
+            <p className="section-desc">{dict.homePage.servicesDesc}</p>
           </div>
 
           <div className="services-grid animate-slide-up delay-100">
             <div className="service-card glass-panel">
               <div className="service-icon animate-float">⚡</div>
-              <h3>Enerji Santralleri</h3>
-              <p>Karmaşık santral yapılarını tecrübeli teknik personelimizle inşa ediyoruz.</p>
-              <Link href="/hizmetler" className="service-link">Detaylı Bilgi &rarr;</Link>
+              <h3>{dict.homePage.service1Title}</h3>
+              <p>{dict.homePage.service1Desc}</p>
+              <Link href={`/${lang}/hizmetler`} className="service-link">{dict.homePage.serviceMore} &rarr;</Link>
             </div>
 
             <div className="service-card glass-panel delay-100">
               <div className="service-icon animate-float" style={{ animationDelay: '0.5s' }}>🏢</div>
-              <h3>Konut ve AVM</h3>
-              <p>Yüksek katlı yapılarda kalite normlarına uygun, modern yaşam merkezleri.</p>
-              <Link href="/hizmetler" className="service-link">Detaylı Bilgi &rarr;</Link>
+              <h3>{dict.homePage.service2Title}</h3>
+              <p>{dict.homePage.service2Desc}</p>
+              <Link href={`/${lang}/hizmetler`} className="service-link">{dict.homePage.serviceMore} &rarr;</Link>
             </div>
 
             <div className="service-card glass-panel delay-200">
               <div className="service-icon animate-float" style={{ animationDelay: '1s' }}>🌊</div>
-              <h3>Baraj ve HES</h3>
-              <p>Yüksek beceri gerektiren su yapılarında eşsiz bir deneyime sahibiz.</p>
-              <Link href="/hizmetler" className="service-link">Detaylı Bilgi &rarr;</Link>
+              <h3>{dict.homePage.service3Title}</h3>
+              <p>{dict.homePage.service3Desc}</p>
+              <Link href={`/${lang}/hizmetler`} className="service-link">{dict.homePage.serviceMore} &rarr;</Link>
             </div>
 
             <div className="service-card glass-panel delay-300">
               <div className="service-icon animate-float" style={{ animationDelay: '1.5s' }}>🏥</div>
-              <h3>Kamu Taahhütleri</h3>
-              <p>Hastane, okul ve rehabilitasyon merkezleri FIDIC şartlarına uygun yapılır.</p>
-              <Link href="/hizmetler" className="service-link">Detaylı Bilgi &rarr;</Link>
+              <h3>{dict.homePage.service4Title}</h3>
+              <p>{dict.homePage.service4Desc}</p>
+              <Link href={`/${lang}/hizmetler`} className="service-link">{dict.homePage.serviceMore} &rarr;</Link>
             </div>
           </div>
         </div>
@@ -113,8 +110,8 @@ export default function Home() {
       <section className="featured-projects section bg-surface">
         <div className="container">
           <div className="section-header text-center animate-slide-up">
-            <h2 className="section-title">Öne Çıkan <span>Projeler</span></h2>
-            <p className="section-desc">Gerçeğe dönüştürdüğümüz vizyoner projelerimizden bazıları.</p>
+            <h2 className="section-title">{dict.homePage.featuredTitle} <span>{dict.homePage.featuredTitleSpan}</span></h2>
+            <p className="section-desc">{dict.homePage.featuredDesc}</p>
           </div>
 
           <div className="projects-grid animate-slide-up delay-100">
@@ -133,16 +130,17 @@ export default function Home() {
               ))
             ) : (
               <div style={{ textAlign: "center", gridColumn: "1/-1", padding: "40px", color: "#999" }}>
-                Projeler sisteme girildiğinde burada listelenecektir.
+                {dict.projects.loading}
               </div>
             )}
           </div>
 
           <div className="text-center" style={{ marginTop: '50px' }}>
-            <Link href="/projeler" className="btn-primary">Tüm Projeleri Gör</Link>
+            <Link href={`/${lang}/projeler`} className="btn-primary">{dict.homePage.allProjectsBtn}</Link>
           </div>
         </div>
       </section>
     </div>
   );
 }
+

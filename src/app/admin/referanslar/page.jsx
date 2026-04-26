@@ -21,28 +21,69 @@ export default function AdminReferanslar() {
     };
 
     const uploadLogo = async (file) => {
-        const fileExt = file.name.split('.').pop();
-        const fileName = `references/${Date.now()}.${fileExt}`;
-        const { error } = await supabase.storage.from('bend-yapi-assets').upload(fileName, file);
-        if (error) throw error;
-        return supabase.storage.from('bend-yapi-assets').getPublicUrl(fileName).data.publicUrl;
+        const {
+            data: { session }
+        } = await supabase.auth.getSession();
+
+        if (!session?.access_token) {
+            throw new Error("Oturum bulunamadı. Lütfen tekrar giriş yapın.");
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('folder', 'references');
+
+        const response = await fetch('/api/admin/uploads', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${session.access_token}`
+            },
+            body: formData
+        });
+
+        const result = await response.json();
+        if (!response.ok) {
+            throw new Error(result?.error || 'Logo yüklenemedi.');
+        }
+
+        return result.publicUrl;
     };
 
     const handleAdd = async (e) => {
         e.preventDefault();
         setSaving(true);
         try {
+            const {
+                data: { session }
+            } = await supabase.auth.getSession();
+
+            if (!session?.access_token) {
+                throw new Error("Oturum bulunamadı. Lütfen tekrar giriş yapın.");
+            }
+
             let logo_url = "";
             if (logoFile) {
                 logo_url = await uploadLogo(logoFile);
             }
 
-            const { error } = await supabase.from('references').insert([{
-                company_name: companyName,
-                logo_url: logo_url
-            }]);
+            const response = await fetch('/api/admin/references', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session.access_token}`
+                },
+                body: JSON.stringify({
+                    reference: {
+                        company_name: companyName,
+                        logo_url
+                    }
+                })
+            });
 
-            if (error) throw error;
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result?.error || 'Referans eklenemedi.');
+            }
 
             // Sıfırla ve listeyi yenile
             setCompanyName("");

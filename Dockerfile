@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 
 # Bağımlılıkları yükle
-RUN npm install
+RUN npm ci --include=dev
 
 # Kaynak kodu kopyala
 COPY . .

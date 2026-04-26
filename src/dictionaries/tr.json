@@ -20,5 +20,155 @@
         "projects": "Tamamlanan Proje",
         "countries": "Farklı Ülke",
         "satisfaction": "Müşteri Memnuniyeti"
+    },
+    "homePage": {
+        "servicesTitle": "Uzmanlık",
+        "servicesTitleSpan": "Alanlarımız",
+        "servicesDesc": "Deneyimli mühendislik kadromuzla geniş bir yelpazede hizmet sunuyoruz.",
+        "service1Title": "Enerji Santralleri",
+        "service1Desc": "Karmaşık santral yapılarını tecrübeli teknik personelimizle inşa ediyoruz.",
+        "service2Title": "Konut ve AVM",
+        "service2Desc": "Yüksek katlı yapılarda kalite normlarına uygun, modern yaşam merkezleri.",
+        "service3Title": "Baraj ve HES",
+        "service3Desc": "Yüksek beceri gerektiren su yapılarında eşsiz bir deneyime sahibiz.",
+        "service4Title": "Kamu Taahhütleri",
+        "service4Desc": "Hastane, okul ve rehabilitasyon merkezleri FIDIC şartlarına uygun yapılır.",
+        "serviceMore": "Detaylı Bilgi",
+        "featuredTitle": "Öne Çıkan",
+        "featuredTitleSpan": "Projeler",
+        "featuredDesc": "Gerçeğe dönüştürdüğümüz vizyoner projelerimizden bazıları.",
+        "allProjectsBtn": "Tüm Projeleri Gör"
+    },
+    "footer": {
+        "description": "2005 yılından beri kalite ve güvenden taviz vermeden dünya standartlarında yeni yaşam merkezleri kuruyoruz.",
+        "quickLinksTitle": "Hızlı Linkler",
+        "contactTitle": "İletişim",
+        "addressLabel": "Adres:",
+        "emailLabel": "E-Posta:",
+        "phoneLabel": "Telefon:",
+        "address": "Ataşehir Mah. Serdarlar Sok. No: 27/A Elazığ / Türkiye",
+        "copyright": "Bend Yapı İnşaat Taah. San. ve Tic. Ltd. Şti. Tüm Hakları Saklıdır.",
+        "links": {
+            "about": "Kurumsal",
+            "projects": "Projeler",
+            "services": "Hizmetler",
+            "references": "Referanslar"
+        }
+    },
+    "projects": {
+        "title": "Tüm",
+        "titleSpan": "Projelerimiz",
+        "all": "Tüm Projeler",
+        "completed": "Tamamlanan Projeler",
+        "ongoing": "Devam Eden Projeler",
+        "notFound": "Henüz proje eklenmedi.",
+        "certificate": "İŞ BİTİRME BELGESİ",
+        "show": "Detay",
+        "loading": "Yükleniyor...",
+        "back": "Projelere Dön",
+        "location": "Lokasyon",
+        "date": "Tarih Aralığı",
+        "employer": "İşveren",
+        "budget": "Bütçe",
+        "zone": "Yapım Alanı"
+    },
+    "servicesPage": {
+        "title": "Hizmet",
+        "titleSpan": "Alanlarımız",
+        "desc": "20 yılı aşkın deneyim ve uzman mühendislik kadromuzla dört ana alanda güvenilir çözümler sunuyoruz.",
+        "items": [
+            {
+                "icon": "⚡",
+                "baslik": "Enerji Santralleri",
+                "aciklama": "Karmaşık santral yapılarını tecrübeli teknik personelimizle inşa ediyoruz.",
+                "detaylar": [
+                    "Termik santral yapımı ve renovasyonu",
+                    "Doğal gaz kombine çevrim santralleri",
+                    "Enerji iletim altyapısı",
+                    "Yenilenebilir enerji tesisleri"
+                ]
+            },
+            {
+                "icon": "🏢",
+                "baslik": "Konut ve AVM",
+                "aciklama": "Yüksek katlı yapılarda kalite normlarına uygun modern yaşam merkezleri inşa ediyoruz.",
+                "detaylar": [
+                    "Yüksek katlı rezidans projeleri",
+                    "Alışveriş ve yaşam merkezleri",
+                    "Akıllı bina sistemleri entegrasyonu",
+                    "İç mekan düzenleme ve peyzaj"
+                ]
+            },
+            {
+                "icon": "🌊",
+                "baslik": "Baraj ve HES",
+                "aciklama": "Yüksek beceri gerektiren su yapılarında eşsiz bir deneyime sahibiz.",
+                "detaylar": [
+                    "Beton ve toprak dolgu barajlar",
+                    "Hidroelektrik santraller (HES)",
+                    "Sulama kanalları ve tüneller",
+                    "Taşkın koruma yapıları"
+                ]
+            },
+            {
+                "icon": "🏥",
+                "baslik": "Kamu Taahhütleri",
+                "aciklama": "Hastane, okul ve rehabilitasyon merkezleri uluslararası standartlarda teslim edilir.",
+                "detaylar": [
+                    "Tam teşekküllü hastane binaları",
+                    "Eğitim kurumları ve kampüsler",
+                    "Kamu hizmet binaları",
+                    "Sosyal tesisler"
+                ]
+            }
+        ],
+        "ctaTitle": "Projeniz mi var?",
+        "ctaDesc": "Uzman ekibimiz sizin için en uygun çözümü tasarlasın. Hemen bizimle iletişime geçin.",
+        "ctaBtn": "WhatsApp ile İletişim"
+    },
+    "contactPage": {
+        "title": "İletişim",
+        "titleSpan": "ve Ulaşım",
+        "desc": "Projeleriniz için bize ulaşın. Merkez ofisimiz ve Irak şubemiz ile hizmetinizdeyiz.",
+        "headOffice": "Merkez Ofis",
+        "iraqOffice": "Irak Şubesi",
+        "addressLabel": "Adres",
+        "phoneLabel": "Telefon",
+        "faxLabel": "Faks",
+        "emailLabel": "E-Posta",
+        "addressHead": "Ataşehir Mah. Serdarlar Sok. No: 27/A Elazığ / Türkiye",
+        "addressIraq": "Erbil Gate No: 120 Erbil / Irak",
+        "mapTitle": "Merkez Ofis Harita",
+        "waBtn": "WhatsApp İletişim"
+    },
+    "aboutPage": {
+        "title": "Kurumsal",
+        "desc": "2005 yılından bu yana vizyoner projelerle Türkiye ve dünyanın dört bir yanında geleceği inşa ediyoruz.",
+        "whoTitle": "Biz Kimiz?",
+        "whoText1": "Bend Yapı, modern mimariyi sağlam mühendislik ilkeleriyle birleştirerek güvenli yapılar inşa eder.",
+        "whoText2": "Baraj, HES ve büyük ölçekli projelerde tecrübemizle zorlu işleri zamanında teslim ediyoruz.",
+        "missionTitle": "Misyonumuz",
+        "missionText": "Doğaya saygılı, yüksek teknoloji ile donatılmış güvenli yapılar inşa etmek.",
+        "visionTitle": "Vizyonumuz",
+        "visionText": "Küresel inşaat sektöründe ülkemizi başarıyla temsil eden yenilikçi bir marka olmak.",
+        "whyTitle": "Neden",
+        "whyTitleSpan": "Bend Yapı?",
+        "whyCard1Title": "Teknik Uzmanlık",
+        "whyCard1Desc": "Deneyimli mühendis kadromuzla zorlu projelerde yüksek başarı sağlıyoruz.",
+        "whyCard2Title": "Uluslararası Standartlar",
+        "whyCard2Desc": "FIDIC normlarına uygun süreç yönetimiyle kaliteli teslimat yapıyoruz.",
+        "whyCard3Title": "Sürdürülebilir Güven",
+        "whyCard3Desc": "Dürüstlük, şeffaflık ve kaliteyi her projede öncelik kabul ediyoruz.",
+        "ctaTitle": "Geleceği Birlikte İnşa Edelim",
+        "ctaDesc": "Projeleriniz veya ortaklık konularında profesyonel çözümler için bizimle iletişime geçin.",
+        "ctaBtn1": "İletişime Geçin",
+        "ctaBtn2": "Projelerimizi Görün"
+    },
+    "referencesPage": {
+        "title": "Şirket",
+        "titleSpan": "Referanslarımız",
+        "desc": "Bend Yapı olarak sektörün önde gelen kurum ve firmalarıyla güçlü çözüm ortaklıkları kurduk.",
+        "note": "Referans logolarımız admin paneli üzerinden güncellenmektedir.",
+        "notFound": "Henüz referans eklenmedi."
     }
 }

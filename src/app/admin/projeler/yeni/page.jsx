@@ -28,16 +28,34 @@ export default function ProjeEkle() {
             .trim();
     };
 
-    const handleTitleChange = (e) => {
-        setFormData({ ...formData, title: e.target.value, slug: generateSlug(e.target.value) });
+    const uploadImage = async (file, folder) => {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session?.access_token) {
+            throw new Error("Oturum bulunamadı. Lütfen tekrar giriş yapın.");
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('folder', folder);
+
+        const response = await fetch('/api/admin/uploads', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${session.access_token}`
+            },
+            body: formData
+        });
+
+        const result = await response.json();
+        if (!response.ok) {
+            throw new Error(result?.error || 'Resim yüklenemedi.');
+        }
+
+        return result.publicUrl;
     };
 
-    const uploadImage = async (file) => {
-        const fileExt = file.name.split('.').pop();
-        const fileName = `projects/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
-        const { error } = await supabase.storage.from('bend-yapi-assets').upload(fileName, file);
-        if (error) throw error;
-        return supabase.storage.from('bend-yapi-assets').getPublicUrl(fileName).data.publicUrl;
+    const handleTitleChange = (e) => {
+        setFormData({ ...formData, title: e.target.value, slug: generateSlug(e.target.value) });
     };
 
     const handleSubmit = async (e) => {
@@ -45,26 +63,47 @@ export default function ProjeEkle() {
         setLoading(true);
 
         try {
+            const {
+                data: { session }
+            } = await supabase.auth.getSession();
+
+            if (!session?.access_token) {
+                throw new Error("Oturum bulunamadı. Lütfen tekrar giriş yapın.");
+            }
+
             let cover_url = "";
             let gallery_urls = [];
 
             if (coverFile) {
-                cover_url = await uploadImage(coverFile);
+                cover_url = await uploadImage(coverFile, 'projects');
                 gallery_urls.push(cover_url);
             }
 
             if (galleryFiles && galleryFiles.length > 0) {
-                const uploadedUrls = await Promise.all(Array.from(galleryFiles).map(file => uploadImage(file)));
+                const uploadedUrls = await Promise.all(Array.from(galleryFiles).map(file => uploadImage(file, 'projects')));
                 gallery_urls = [...gallery_urls, ...uploadedUrls];
             }
 
-            const { error } = await supabase.from('projects').insert([{
-                ...formData,
-                cover_image: cover_url,
-                gallery: gallery_urls
-            }]);
+            const response = await fetch('/api/admin/projects', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session.access_token}`
+                },
+                body: JSON.stringify({
+                    project: {
+                        ...formData,
+                        cover_image: cover_url,
+                        gallery: gallery_urls
+                    }
+                })
+            });
 
-            if (error) throw error;
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result?.error || 'Proje eklenemedi.');
+            }
+
             router.push("/admin/projeler");
         } catch (err) {
             alert("Hata: " + err.message);

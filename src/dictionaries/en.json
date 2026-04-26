@@ -20,5 +20,155 @@
         "projects": "Completed Projects",
         "countries": "Different Countries",
         "satisfaction": "Customer Satisfaction"
+    },
+    "homePage": {
+        "servicesTitle": "Our",
+        "servicesTitleSpan": "Expertise",
+        "servicesDesc": "With our experienced engineering team, we provide services across a broad range of fields.",
+        "service1Title": "Power Plants",
+        "service1Desc": "We build complex plant structures with our experienced technical personnel.",
+        "service2Title": "Housing and Malls",
+        "service2Desc": "Modern living centers in high-rise projects that comply with quality standards.",
+        "service3Title": "Dams and HPP",
+        "service3Desc": "We have unique experience in high-skill water infrastructure projects.",
+        "service4Title": "Public Contracting",
+        "service4Desc": "Hospitals, schools, and rehabilitation centers are delivered under FIDIC standards.",
+        "serviceMore": "More Details",
+        "featuredTitle": "Featured",
+        "featuredTitleSpan": "Projects",
+        "featuredDesc": "Some of the visionary projects we have brought to life.",
+        "allProjectsBtn": "View All Projects"
+    },
+    "footer": {
+        "description": "Since 2005, we have been building world-class new living centers without compromising quality and trust.",
+        "quickLinksTitle": "Quick Links",
+        "contactTitle": "Contact",
+        "addressLabel": "Address:",
+        "emailLabel": "Email:",
+        "phoneLabel": "Phone:",
+        "address": "Atasehir Neighborhood, Serdarlar Street, No: 27/A Elazig / Turkey",
+        "copyright": "Bend Yapi Construction Contracting Co. All rights reserved.",
+        "links": {
+            "about": "Corporate",
+            "projects": "Projects",
+            "services": "Services",
+            "references": "References"
+        }
+    },
+    "projects": {
+        "title": "All",
+        "titleSpan": "Projects",
+        "all": "All Projects",
+        "completed": "Completed Projects",
+        "ongoing": "Ongoing Projects",
+        "notFound": "No projects have been added yet.",
+        "certificate": "WORK COMPLETION CERTIFICATE",
+        "show": "Show",
+        "loading": "Loading...",
+        "back": "Back to Projects",
+        "location": "Location",
+        "date": "Date Range",
+        "employer": "Employer",
+        "budget": "Budget",
+        "zone": "Construction Zone"
+    },
+    "servicesPage": {
+        "title": "Our",
+        "titleSpan": "Services",
+        "desc": "With over 20 years of experience and expert engineering staff, we provide reliable solutions in four main areas.",
+        "items": [
+            {
+                "icon": "⚡",
+                "baslik": "Power Plants",
+                "aciklama": "We build complex power plant structures with our experienced technical teams.",
+                "detaylar": [
+                    "Thermal plant construction and renovation",
+                    "Natural gas combined cycle plants",
+                    "Energy transmission infrastructure",
+                    "Renewable energy facilities"
+                ]
+            },
+            {
+                "icon": "🏢",
+                "baslik": "Housing and Malls",
+                "aciklama": "We construct modern living centers in compliance with quality standards for high-rise buildings.",
+                "detaylar": [
+                    "High-rise residence projects",
+                    "Shopping and lifestyle centers",
+                    "Smart building systems integration",
+                    "Interior planning and landscaping"
+                ]
+            },
+            {
+                "icon": "🌊",
+                "baslik": "Dams and HPP",
+                "aciklama": "We have unique expertise in water structures requiring advanced engineering capabilities.",
+                "detaylar": [
+                    "Concrete and earth-fill dams",
+                    "Hydroelectric power plants (HPP)",
+                    "Irrigation canals and tunnels",
+                    "Flood protection structures"
+                ]
+            },
+            {
+                "icon": "🏥",
+                "baslik": "Public Commitments",
+                "aciklama": "Hospitals, schools, and rehabilitation centers are delivered to international standards.",
+                "detaylar": [
+                    "Full-scale hospital buildings",
+                    "Educational institutions and campuses",
+                    "Public service buildings",
+                    "Social facilities"
+                ]
+            }
+        ],
+        "ctaTitle": "Do you have a project?",
+        "ctaDesc": "Let our expert team design the best solution for you. Contact us now.",
+        "ctaBtn": "Contact via WhatsApp"
+    },
+    "contactPage": {
+        "title": "Contact",
+        "titleSpan": "and Access",
+        "desc": "Reach us for your projects. We are at your service with our headquarters and Iraq branch.",
+        "headOffice": "Head Office",
+        "iraqOffice": "Iraq Branch",
+        "addressLabel": "Address",
+        "phoneLabel": "Phone",
+        "faxLabel": "Fax",
+        "emailLabel": "Email",
+        "addressHead": "Atasehir Neighborhood, Serdarlar Street, No: 27/A Elazig / Turkey",
+        "addressIraq": "Erbil Gate No: 120 Erbil / Iraq",
+        "mapTitle": "Head Office Map",
+        "waBtn": "WhatsApp Contact"
+    },
+    "aboutPage": {
+        "title": "Corporate",
+        "desc": "Since 2005, we have been building the future in Turkey and around the world with visionary projects.",
+        "whoTitle": "Who Are We?",
+        "whoText1": "Bend Yapi builds safe structures by combining modern architecture with sound engineering principles.",
+        "whoText2": "With our expertise in dams, hydropower plants, and large-scale projects, we deliver challenging works on time.",
+        "missionTitle": "Our Mission",
+        "missionText": "To build safe, high-tech structures that respect nature.",
+        "visionTitle": "Our Vision",
+        "visionText": "To be an innovative brand that successfully represents our country in the global construction sector.",
+        "whyTitle": "Why",
+        "whyTitleSpan": "Bend Yapi?",
+        "whyCard1Title": "Technical Expertise",
+        "whyCard1Desc": "We achieve strong results in challenging projects with our experienced engineering team.",
+        "whyCard2Title": "International Standards",
+        "whyCard2Desc": "We deliver quality results with process management aligned with FIDIC norms.",
+        "whyCard3Title": "Sustainable Trust",
+        "whyCard3Desc": "We prioritize honesty, transparency, and quality in every project.",
+        "ctaTitle": "Let's Build the Future Together",
+        "ctaDesc": "Contact us for professional solutions regarding your projects or partnerships.",
+        "ctaBtn1": "Contact Us",
+        "ctaBtn2": "View Our Projects"
+    },
+    "referencesPage": {
+        "title": "Company",
+        "titleSpan": "References",
+        "desc": "As Bend Yapi, we have established strong partnerships with leading institutions and companies.",
+        "note": "Our reference logos are updated through the admin panel.",
+        "notFound": "No references have been added yet."
     }
 }
