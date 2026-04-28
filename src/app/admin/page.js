@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function AdminDashboard() {
-    const [stats, setStats] = useState({ projeler: 0, referanslar: 0 });
+    const [stats, setStats] = useState({ projeler: 0, referanslar: 0, haberler: 0, iletisim: 0 });
 
     useEffect(() => {
         async function fetchStats() {
             try {
                 const { count: pCount } = await supabase.from('projects').select('*', { count: 'exact', head: true });
                 const { count: rCount } = await supabase.from('references').select('*', { count: 'exact', head: true });
-                setStats({ projeler: pCount || 0, referanslar: rCount || 0 });
+                const { count: nCount } = await supabase.from('news_items').select('*', { count: 'exact', head: true });
+                const { count: cCount } = await supabase.from('contact_offices').select('*', { count: 'exact', head: true });
+                setStats({ projeler: pCount || 0, referanslar: rCount || 0, haberler: nCount || 0, iletisim: cCount || 0 });
             } catch (err) {
                 console.error("İstatistikler alınamadı", err);
             }
@@ -27,7 +29,7 @@ export default function AdminDashboard() {
                 Bend Yapı Yönetim Paneline hoş geldiniz. Sol menüyü kullanarak projelerinizi ve referans şirketlerinizi yönetebilirsiniz.
             </p>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "20px" }}>
                 <div style={{ background: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", textAlign: "center" }}>
                     <h3 style={{ color: "#888", fontSize: "16px" }}>Toplam Proje (İş Bitirme)</h3>
                     <div style={{ fontSize: "40px", fontWeight: "bold", color: "#1e1e1e", marginTop: "10px" }}>{stats.projeler}</div>
@@ -35,6 +37,14 @@ export default function AdminDashboard() {
                 <div style={{ background: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", textAlign: "center" }}>
                     <h3 style={{ color: "#888", fontSize: "16px" }}>Toplam Referans</h3>
                     <div style={{ fontSize: "40px", fontWeight: "bold", color: "#1e1e1e", marginTop: "10px" }}>{stats.referanslar}</div>
+                </div>
+                <div style={{ background: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", textAlign: "center" }}>
+                    <h3 style={{ color: "#888", fontSize: "16px" }}>Toplam Haber</h3>
+                    <div style={{ fontSize: "40px", fontWeight: "bold", color: "#1e1e1e", marginTop: "10px" }}>{stats.haberler}</div>
+                </div>
+                <div style={{ background: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", textAlign: "center" }}>
+                    <h3 style={{ color: "#888", fontSize: "16px" }}>İletişim Ofisleri</h3>
+                    <div style={{ fontSize: "40px", fontWeight: "bold", color: "#1e1e1e", marginTop: "10px" }}>{stats.iletisim}</div>
                 </div>
             </div>
         </div>

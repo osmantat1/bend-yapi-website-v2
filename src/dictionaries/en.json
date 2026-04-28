@@ -37,7 +37,19 @@
         "featuredTitle": "Featured",
         "featuredTitleSpan": "Projects",
         "featuredDesc": "Some of the visionary projects we have brought to life.",
-        "allProjectsBtn": "View All Projects"
+        "allProjectsBtn": "View All Projects",
+        "newsTitle": "Latest",
+        "newsTitleSpan": "News",
+        "newsDesc": "Follow our latest updates and announcements here.",
+        "allNewsBtn": "View All News",
+        "newsEmpty": "No news have been published yet."
+    },
+    "newsPage": {
+        "title": "News",
+        "titleSpan": "Announcements",
+        "desc": "The latest updates, project news, and industry announcements from Bend Yapı.",
+        "empty": "No news have been published yet.",
+        "note": "News are managed through the admin panel."
     },
     "footer": {
         "description": "Since 2005, we have been building world-class new living centers without compromising quality and trust.",

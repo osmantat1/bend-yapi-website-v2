@@ -60,6 +60,8 @@ export default function AdminLayout({ children }) {
                     <Link href="/admin" style={{ color: "#ddd", textDecoration: "none" }}>Gösterge Paneli</Link>
                     <Link href="/admin/projeler" style={{ color: "#ddd", textDecoration: "none" }}>Projeler (İş Bitirme)</Link>
                     <Link href="/admin/referanslar" style={{ color: "#ddd", textDecoration: "none" }}>Referanslar</Link>
+                    <Link href="/admin/haberler" style={{ color: "#ddd", textDecoration: "none" }}>Haberler</Link>
+                    <Link href="/admin/iletisim" style={{ color: "#ddd", textDecoration: "none" }}>İletişim</Link>
                 </nav>
 
                 <button

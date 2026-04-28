@@ -103,6 +103,12 @@
     color: var(--color-accent-light);
 }
 
+.haberler-empty {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: 40px 0;
+}
+
 .ref-not {
     font-size: 0.8rem;
     color: rgba(160, 160, 160, 0.5);

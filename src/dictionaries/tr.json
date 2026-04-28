@@ -37,7 +37,19 @@
         "featuredTitle": "Öne Çıkan",
         "featuredTitleSpan": "Projeler",
         "featuredDesc": "Gerçeğe dönüştürdüğümüz vizyoner projelerimizden bazıları.",
-        "allProjectsBtn": "Tüm Projeleri Gör"
+        "allProjectsBtn": "Tüm Projeleri Gör",
+        "newsTitle": "En Güncel",
+        "newsTitleSpan": "Haberler",
+        "newsDesc": "Son gelişmelerimizi ve duyurularımızı buradan takip edebilirsiniz.",
+        "allNewsBtn": "Tüm Haberleri Gör",
+        "newsEmpty": "Henüz yayınlanmış haber bulunmuyor."
+    },
+    "newsPage": {
+        "title": "Haberler",
+        "titleSpan": "Duyurular",
+        "desc": "Bend Yapı'dan en güncel gelişmeler, proje haberleri ve sektör duyuruları.",
+        "empty": "Henüz yayınlanmış haber bulunmuyor.",
+        "note": "Haberler admin panelinden yönetilmektedir."
     },
     "footer": {
         "description": "2005 yılından beri kalite ve güvenden taviz vermeden dünya standartlarında yeni yaşam merkezleri kuruyoruz.",

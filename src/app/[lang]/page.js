@@ -1,13 +1,14 @@
 import { getDictionary } from "@/utils/dictionary";
-import { supabase } from "@/lib/supabase";
-import Image from "next/image";
 import Link from "next/link";
 import "./page.css";
+import { getLatestNews } from "@/lib/siteContent";
+import { supabase } from "@/lib/supabase";
 
 export default async function Home({ params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
   let featuredProjects = [];
+  let latestNews = [];
 
   try {
     const { data } = await supabase
@@ -21,6 +22,12 @@ export default async function Home({ params }) {
     }
   } catch (err) {
     console.error("Öne çıkan projeler yüklenirken hata:", err);
+  }
+
+  try {
+    latestNews = await getLatestNews(3);
+  } catch (err) {
+    console.error("Güncel haberler yüklenirken hata:", err);
   }
 
   return (
@@ -137,6 +144,42 @@ export default async function Home({ params }) {
 
           <div className="text-center" style={{ marginTop: '50px' }}>
             <Link href={`/${lang}/projeler`} className="btn-primary">{dict.homePage.allProjectsBtn}</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="latest-news section">
+        <div className="container">
+          <div className="section-header text-center animate-slide-up">
+            <h2 className="section-title">{dict.homePage.newsTitle} <span>{dict.homePage.newsTitleSpan}</span></h2>
+            <p className="section-desc">{dict.homePage.newsDesc}</p>
+          </div>
+
+          {latestNews.length > 0 ? (
+            <div className="news-grid animate-slide-up delay-100">
+              {latestNews.map((item, i) => (
+                <article key={item.id} className={`news-card glass-panel delay-${i * 100}`}>
+                  <div className="news-card-top">
+                    <span className="news-badge">{item.category || "Duyuru"}</span>
+                    <time className="news-date">{new Intl.DateTimeFormat(lang === "en" ? "en-US" : "tr-TR", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    }).format(new Date(item.published_at || item.created_at))}</time>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.summary}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: "center", color: "var(--color-text-secondary)" }}>
+              {dict.homePage.newsEmpty}
+            </div>
+          )}
+
+          <div className="text-center" style={{ marginTop: '50px' }}>
+            <Link href={`/${lang}/haberler`} className="btn-primary">{dict.homePage.allNewsBtn}</Link>
           </div>
         </div>
       </section>
