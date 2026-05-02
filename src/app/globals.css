@@ -35,11 +35,6 @@ body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background-color: var(--color-bg);
-  /* Daha grili siyahlı ve derin ışıklı arka plan tasarımı */
-  background-image: url('/assets/arkaplan1.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -47,14 +42,28 @@ body {
   /* Before/After için gerekli */
 }
 
+/* Sabit Arkaplan Katmanı - Safari ve iOS buglarını engellemek için */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url('/assets/arkaplan1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 /* Mobil cihazlarda arkaplan sığdırma problemi için */
 @media (max-width: 1024px) {
-  html,
-  body {
+  html::before {
     background-image: url('/assets/mobilarkaplan.png');
-    background-attachment: scroll;
     background-position: center top;
-    background-size: cover;
+    /* Resmi mobilde ekrana tam oturtmak için object-cover eşdeğeridir */
   }
 }
 
