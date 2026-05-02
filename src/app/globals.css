@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background-color: var(--color-bg);
+  background-color: transparent; /* Arkaplan div'e taşındı */
   color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -43,14 +43,14 @@ body {
 }
 
 /* Sabit Arkaplan Katmanı - Safari ve iOS buglarını engellemek için */
-html::before {
-  content: '';
+.bg-fixed-layer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -2;
+  z-index: -5;
+  background-color: var(--color-bg);
   background-image: url('/assets/arkaplan1.png');
   background-size: cover;
   background-position: center;
@@ -60,10 +60,9 @@ html::before {
 
 /* Mobil cihazlarda arkaplan sığdırma problemi için */
 @media (max-width: 1024px) {
-  html::before {
+  .bg-fixed-layer {
     background-image: url('/assets/mobilarkaplan.png');
     background-position: center top;
-    /* Resmi mobilde ekrana tam oturtmak için object-cover eşdeğeridir */
   }
 }
 
