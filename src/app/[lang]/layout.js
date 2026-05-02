@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 import ReferansCarousel from "@/components/ReferansCarousel/ReferansCarousel";
 import { getDictionary } from "@/utils/dictionary";
 
@@ -26,7 +25,6 @@ export default async function LangLayout({ children, params }) {
       </main>
       <ReferansCarousel />
       <Footer dict={dict.footer} currentLang={lang} />
-      <WhatsAppButton />
     </div>
   );
 }

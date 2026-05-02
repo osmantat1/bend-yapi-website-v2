@@ -51,8 +51,9 @@ body {
 @media (max-width: 1024px) {
   html,
   body {
+    background-image: url('/assets/mobilarkaplan.png');
     background-attachment: scroll;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
   }
 }

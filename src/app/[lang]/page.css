@@ -21,9 +21,9 @@
 /* Mobil Cihazlar - Mobilde performans için fixed kapatılır */
 @media (max-width: 768px) {
     .hero {
-        background-image: url('/assets/Gemini_Generated_Image_ymfniiymfniiymfn.png');
         background-attachment: scroll;
         background-position: center top;
+        background-size: cover;
     }
 }
 
