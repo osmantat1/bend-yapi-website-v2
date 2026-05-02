@@ -110,6 +110,15 @@
     text-align: center;
 }
 
+.stat-card {
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .stat-number {
     font-size: 3.5rem;
     font-weight: 900;
@@ -323,7 +332,7 @@
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 30px;
     }
 
     .services-grid {
@@ -332,6 +341,18 @@
 }
 
 @media (max-width: 768px) {
+    .stats-grid {
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
     .hero .hero-content .hero-title {
         font-size: clamp(1.12rem, 5.1vw, 1.34rem) !important;
         line-height: 1.08;

@@ -47,6 +47,16 @@ body {
   /* Before/After için gerekli */
 }
 
+/* Mobil cihazlarda arkaplan sığdırma problemi için */
+@media (max-width: 1024px) {
+  html,
+  body {
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 /* Tüm sayfaya yayılan camsı ışık kırılması (diyagonal çizgiler/parlamalar) efekti */
 body::before,
 body::after {

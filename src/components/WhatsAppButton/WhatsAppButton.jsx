@@ -4,7 +4,7 @@ import "./WhatsAppButton.css";
 
 export default function WhatsAppButton() {
     // Numara daha sonra .env'den alınacak
-    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905555555555";
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "904242476200";
     const message = encodeURIComponent("Merhaba, Bend Yapı projeleri hakkında bilgi almak istiyorum.");
 
     const waLink = `https://wa.me/${phoneNumber}?text=${message}`;

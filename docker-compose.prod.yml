@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: bend-yapi-prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env.local # Canlı sunucuda sadece .env kullanmanız önerilir, gerektiğinde burayı .env olarak güncelleyin.
+    restart: always

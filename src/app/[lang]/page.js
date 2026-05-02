@@ -53,19 +53,19 @@ export default async function Home({ params }) {
       <section className="stats bg-surface">
         <div className="container">
           <div className="stats-grid animate-slide-up delay-200">
-            <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
+            <div className="stat-card glass-panel text-center">
               <h2 className="stat-number glow-text">20+</h2>
               <p className="stat-label">{dict.stats.exp}</p>
             </div>
-            <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
+            <div className="stat-card glass-panel text-center">
               <h2 className="stat-number glow-text">50+</h2>
               <p className="stat-label">{dict.stats.projects}</p>
             </div>
-            <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
+            <div className="stat-card glass-panel text-center">
               <h2 className="stat-number glow-text">5+</h2>
               <p className="stat-label">{dict.stats.countries}</p>
             </div>
-            <div className="stat-card glass-panel" style={{ padding: '30px', borderRadius: '16px' }}>
+            <div className="stat-card glass-panel text-center">
               <h2 className="stat-number glow-text">%100</h2>
               <p className="stat-label">{dict.stats.satisfaction}</p>
             </div>
